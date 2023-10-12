@@ -350,7 +350,7 @@ def walking_isochrone_download_button(st_col, street_address):
 
 def transit_address_input():
     col1, col2 = st.columns([7,2])
-    label = "Enter an address below to generate a map of everywhere transit can take you from that spot. This may take a few minutes."
+    label = "Enter a Chicago address below to generate a map of everywhere transit can take you from that spot. This may take a few minutes."
     address = col1.text_input(label, key="transit_address",
         placeholder="Enter your Address")
 

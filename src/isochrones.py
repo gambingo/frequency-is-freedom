@@ -5,7 +5,8 @@ import osmnx as ox
 import networkx as nx
 
 import src.graphs as graphs
-import src.gtfs as gtfs
+# import src.gtfs as gtfs
+from . import utils
 from src.utils import timer_func
 
 
@@ -109,7 +110,7 @@ class TransitIsochrone:
         self.citywide_graph = graphs.load_citywide_graph(self.city)
         nx.set_edge_attributes(self.citywide_graph, True, "display")
         filepath = self.app_data_directory / "transit_graph.pkl"
-        self.transit_graph = nx.read_gpickle(filepath)
+        self.transit_graph = utils.read_pickle(filepath)
 
 
     def set_graph_weights(self, freq_multiplier, reset_city_graph=False):

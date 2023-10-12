@@ -24,6 +24,17 @@ def timer_func(func):
     return wrap_func
 
 
+def save_pickle(obj, filepath):
+    with open(filepath, "wb") as pkl_file:
+        pickle.dump(obj, pkl_file, pickle.HIGHEST_PROTOCOL)
+
+
+def read_pickle(filepath):
+    with open(filepath, "rb") as pkl_file:
+        obj = pickle.load(pkl_file)
+    return obj
+
+
 # Pickle a file and then compress it into a file with extension 
 def compressed_pickle(data, filepath_with_extension):
     """
