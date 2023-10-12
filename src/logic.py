@@ -43,7 +43,7 @@ def initialize_session_state():
 
 ############################# Bus Arrival Rates #############################
 
-@st.cache
+@st.cache_data
 def load_needed_tables():
     trips = gtfs.load_prepared_gtfs_table("trips")
     stop_times = gtfs.load_prepared_gtfs_table("stop_times")
