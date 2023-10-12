@@ -298,7 +298,7 @@ def walking_address_input():
 
 
 @geocode_check
-@st.experimental_memo()
+@st.cache_data()
 def make_walking_isochrone(address):
     """
     TKTK
@@ -361,7 +361,7 @@ def transit_address_input():
 
 
 @geocode_check
-@st.experimental_memo
+@st.cache_data
 def make_transit_isochrone(address):
     st.session_state["transit_map_ready"] = False
     
@@ -457,7 +457,7 @@ def frequency_address_input():
 
 
 @geocode_check
-@st.experimental_memo
+@st.cache_data
 def make_frequency_isochrones(address):
     st.session_state["frequency_maps_ready"] = False
 

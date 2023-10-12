@@ -44,7 +44,7 @@ def download_citywide_graph(city="Chicago, Illinois"):
     return citywide_graph
 
 
-@st.experimental_memo
+@st.cache_data
 def download_graph_from_address(address, radius=4.5, mode="walk"):
     """
     radius (float, int):    
