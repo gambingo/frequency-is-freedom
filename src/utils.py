@@ -1,5 +1,7 @@
 from time import time
+import os
 
+import psutil
 import bz2
 import pickle
 import _pickle as cPickle
@@ -52,3 +54,11 @@ def decompress_pickle(filepath_with_extension):
     data = bz2.BZ2File(filepath_with_extension, "rb")
     data = cPickle.load(data)
     return data
+
+
+def print_app_memory_usage():
+    process = psutil.Process()
+    usage_in_bytes = process.memory_info().rss
+    print(usage_in_bytes)
+    usage_in_GB = round(usage_in_bytes / 1e9, 3)
+    print(f"App is using {usage_in_GB} GB of memory.")

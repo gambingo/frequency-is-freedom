@@ -3,6 +3,7 @@ from pathlib import Path
 import streamlit as st
 
 import src.logic as lg
+from src import utils
 
 
 st.set_page_config(
@@ -102,3 +103,6 @@ lg.write_text("Draw Maps For Your City")
 
 st.markdown("---")
 lg.write_text("Citations & Helpful References", header_level=5)
+
+
+utils.print_app_memory_usage()
