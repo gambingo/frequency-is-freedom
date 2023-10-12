@@ -69,15 +69,16 @@ transit_isochrone = "plots/transit_isochrone_from_my_apartment.png"
 caption = "How far public transit can take me from my apartment in 15, 30, 45, and 60 minutes."
 st.image(transit_isochrone, caption=caption)
 
-st.markdown("##### Generate Your Own Transit Map")
-transit_address = lg.transit_address_input()
-if transit_address:
-    lg.make_transit_isochrone(transit_address)
-    if st.session_state["transit_map_ready"]:
-        street_address = transit_address.split(",")[0]
-        caption = f"Everywhere someone can take public transit in 15, 30, and 45 minutes from {street_address}."
-        filepath = "plots/user_generated_transit_isochrone.png"
-        st.image(filepath, caption=caption)
+# For now, this uses too much memory to host on Streamlit Cloud
+# st.markdown("##### Generate Your Own Transit Map")
+# transit_address = lg.transit_address_input()
+# if transit_address:
+#     lg.make_transit_isochrone(transit_address)
+#     if st.session_state["transit_map_ready"]:
+#         street_address = transit_address.split(",")[0]
+#         caption = f"Everywhere someone can take public transit in 15, 30, and 45 minutes from {street_address}."
+#         filepath = "plots/user_generated_transit_isochrone.png"
+#         st.image(filepath, caption=caption)
 
 
 lg.write_text("More Buses Take You More Places")
